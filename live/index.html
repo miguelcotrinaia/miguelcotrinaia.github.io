@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lives e intensivos de IA | Miguel Ángel Cotrina (@miguelcotrinaia)</title>
+<meta name="description" content="Los intensivos de IA de los que hablo en mis lives de TikTok: AI Agent Production Sprint y AI Strategy Sprint, de ArkanyAI Academy. En vivo y online.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://miguelcotrinaia.com/live/">
+<link rel="icon" type="image/svg+xml" href="../img/marca/icono.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../img/marca/icono-32.png">
+<link rel="apple-touch-icon" href="../img/marca/icono-180.png">
+<meta name="theme-color" content="#0E1B2C">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://miguelcotrinaia.com/live/">
+<meta property="og:title" content="Lives e intensivos de IA · @miguelcotrinaia">
+<meta property="og:description" content="Los intensivos de IA de los que hablo en mis lives de TikTok. En vivo y online, con ArkanyAI Academy.">
+<meta property="og:image" content="https://miguelcotrinaia.com/macperfil.png">
+<meta property="og:locale" content="es_PE">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+/* Página de entrada desde TikTok: se abre de noche y en el celular. Fondo azul noche, acento ámbar de la marca, cian solo para ArkanyAI Academy. */
+:root{
+  --night:#0E1B2C; --night-2:#14253B; --night-3:#1B3049;
+  --ink:#F4F1EA; --ink-2:#B9C2D0; --ink-3:#8593A8;
+  --line:rgba(255,255,255,.12);
+  --amber:#F2B233; --amber-soft:rgba(242,178,51,.12); --cyan:#3FC3E6;
+  --display:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --body:"Source Sans 3","Segoe UI",Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--night);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;padding-bottom:84px}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:6px}
+h1,h2,h3{font-family:var(--display);line-height:1.1;letter-spacing:-.015em;text-wrap:balance}
+.wrap{max-width:960px;margin:0 auto;padding:0 16px}
+.kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--amber)}
+.kicker--cyan{color:var(--cyan)}
+
+.top{padding:18px 0;border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.top img{height:26px;width:auto}
+.top a.home{font-size:14.5px;color:var(--ink-2);text-decoration:none}
+.top a.home:hover{color:var(--ink)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 20px;border-radius:10px;font-weight:700;font-size:16px;text-decoration:none;border:1.5px solid transparent;text-align:center;line-height:1.2}
+.btn--amber{background:var(--amber);color:var(--night)}
+.btn--amber:hover{background:#F6C258}
+.btn--line{border-color:rgba(255,255,255,.35);color:var(--ink)}
+.btn--line:hover{border-color:var(--ink)}
+.btn svg{flex:none}
+
+.hero{padding:40px 0 8px}
+.hero h1{font-size:clamp(32px,7vw,52px);font-weight:800;margin-top:12px;max-width:18ch}
+.hero .lead{margin-top:14px;font-size:18.5px;color:var(--ink-2);max-width:58ch}
+.hero .lead b{color:var(--ink)}
+
+.livebox{margin-top:26px;background:var(--amber-soft);border:1.5px solid var(--amber);border-radius:14px;padding:18px;display:grid;gap:12px;max-width:640px}
+.livebox h2{font-size:21px;display:flex;align-items:center;gap:10px}
+.livebox h2 i{width:10px;height:10px;border-radius:50%;background:#FF4D5E;box-shadow:0 0 0 4px rgba(255,77,94,.22);flex:none}
+.livebox p{color:var(--ink)}
+.livebox .btn{justify-self:start}
+
+.sec{padding:48px 0 8px}
+.sec h2{font-size:clamp(26px,4.5vw,34px);font-weight:800;margin-top:8px}
+.sec .sub{margin-top:8px;color:var(--ink-2);max-width:60ch}
+
+.courses{margin-top:22px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.course{background:var(--night-2);border:1px solid var(--line);border-radius:16px;padding:20px;display:grid;gap:12px;align-content:start}
+.course .who{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--cyan)}
+.course h3{font-size:23px;font-weight:800}
+.course > p{color:var(--ink-2)}
+.course dl{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:15.5px;padding-top:12px;border-top:1px solid var(--line)}
+.course dt{font-family:var(--mono);font-size:12px;color:var(--ink-3);padding-top:3px}
+.course .price{font-family:var(--display);font-size:24px;font-weight:800;color:var(--ink)}
+.course .price small{display:block;font-family:var(--body);font-size:13.5px;font-weight:400;color:var(--ink-3)}
+.course .acts{display:grid;gap:10px;margin-top:4px}
+.course .acts .btn{width:100%}
+.course a.more{font-size:15px;color:var(--ink-2);text-align:center}
+.course a.more:hover{color:var(--ink)}
+.none{margin-top:18px;padding:18px;border:1px dashed var(--line);border-radius:14px;color:var(--ink-2)}
+
+.lives{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center;background:var(--night-2);border:1px solid var(--line);border-radius:16px;padding:20px;margin-top:20px}
+.clock{font-family:var(--display);font-weight:800;font-size:28px;line-height:1;text-align:center;padding:14px 16px;border-radius:12px;background:var(--night-3)}
+.clock small{display:block;font-family:var(--mono);font-size:11.5px;font-weight:500;color:var(--ink-3);margin-top:6px;letter-spacing:.06em}
+.lives p{color:var(--ink-2)}
+.lives p b{color:var(--ink)}
+.lives .btn{margin-top:12px}
+
+.teacher{display:grid;grid-template-columns:150px 1fr;gap:24px;align-items:start;margin-top:20px}
+.teacher img{width:150px;height:150px;border-radius:50%;object-fit:cover;border:3px solid var(--amber)}
+.proof{list-style:none;display:grid;gap:10px}
+.proof li{padding-left:20px;position:relative}
+.proof li::before{content:"";position:absolute;left:0;top:10px;width:9px;height:9px;border-radius:2px;background:var(--amber)}
+.teacher .note{margin-top:14px;font-size:15px;color:var(--ink-3)}
+.teacher a.verify{display:inline-block;margin-top:12px;color:var(--amber);font-weight:700;text-decoration:none}
+.teacher a.verify:hover{text-decoration:underline}
+
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:20px}
+.panel{border:1px solid var(--line);border-radius:16px;padding:20px;display:grid;gap:10px;align-content:start}
+.panel h3{font-size:21px}
+.panel p{color:var(--ink-2)}
+.panel .btn{justify-self:start}
+
+.faq{margin-top:16px;max-width:720px}
+.faq details{border-top:1px solid var(--line)}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;list-style:none;padding:16px 36px 16px 0;font-weight:700;font-size:17.5px;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:4px;top:13px;font-family:var(--mono);font-size:20px;color:var(--ink-3)}
+.faq details[open] summary::after{content:"–"}
+.faq p{padding:0 0 16px;color:var(--ink-2)}
+
+.foot{margin-top:56px;padding:28px 0;border-top:1px solid var(--line);color:var(--ink-3);font-size:14.5px}
+.foot .wrap{display:grid;gap:10px}
+.foot nav{display:flex;flex-wrap:wrap;gap:6px 16px}
+.foot a{color:var(--ink-2);text-decoration:none}
+.foot a:hover{color:var(--ink)}
+
+.stick{position:fixed;left:0;right:0;bottom:0;z-index:20;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:rgba(14,27,44,.94);border-top:1px solid var(--line);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.stick .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0}
+.stick span{font-size:14.5px;color:var(--ink-2)}
+.stick .btn{min-height:44px;font-size:15px;white-space:nowrap}
+
+@media (max-width:760px){
+  .courses,.two{grid-template-columns:1fr}
+}
+@media (max-width:520px){
+  body{font-size:16.5px}
+  .hero{padding-top:28px}
+  .teacher{grid-template-columns:1fr;gap:16px}
+  .teacher img{width:112px;height:112px}
+  .lives{grid-template-columns:1fr}
+  .clock{justify-self:start}
+  .stick span{display:none}
+  .stick .btn{width:100%}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a href="../" aria-label="miguelcotrinaia.com, ir al inicio"><img src="../img/marca/logo-horizontal-fondo-oscuro.svg" alt="miguelcotrinaia" width="154" height="26"></a>
+    <a class="home" href="https://www.linkedin.com/in/miguelcotrinaia/" target="_blank" rel="noopener" aria-label="Mi trayectoria en LinkedIn (se abre en otra pestaña)">Mi LinkedIn ↗</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <p class="kicker">Vienes de mi TikTok</p>
+      <h1>Los intensivos de los que hablo en el live</h1>
+      <p class="lead" data-con-cursos>Cursos en vivo de ArkanyAI Academy, el <b>5 y 6 de diciembre</b>. Los dicto yo: trabajo en <b>Indra</b> como arquitecto de Data &amp; IA y diseñé la <b>Especialización en IA Generativa de la Universidad Ricardo Palma</b>.</p>
+      <p class="lead" data-sin-cursos hidden>Aquí publico el intensivo que ofrezco en cada live. Trabajo en <b>Indra</b> como arquitecto de Data &amp; IA y diseñé la <b>Especialización en IA Generativa de la Universidad Ricardo Palma</b>.</p>
+
+      <div class="livebox" data-con-cursos>
+        <h2><i aria-hidden="true"></i>¿Estás en el live ahora?</h2>
+        <p>El precio del live solo vale mientras estoy en vivo. Escríbeme por WhatsApp antes de que termine y te lo separo.</p>
+        <a class="btn btn--amber" href="https://wa.me/51932764113?text=Hola%20Miguel%2C%20estoy%20en%20tu%20live%20y%20quiero%20el%20precio%20del%20live." target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.02 2C6.5 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.07L2 22l5.06-1.33A9.94 9.94 0 0 0 12.02 22C17.53 22 22 17.52 22 12S17.53 2 12.02 2zm5.45 12.38c-.29-.15-1.72-.85-1.99-.95-.27-.1-.46-.15-.66.15-.2.29-.76.95-.93 1.14-.17.2-.34.22-.63.07-.29-.15-1.22-.45-2.32-1.43-.86-.76-1.44-1.71-1.61-2-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.51.15-.17.2-.29.29-.49.1-.2.05-.37-.02-.51-.07-.15-.66-1.59-.9-2.18-.24-.57-.48-.5-.66-.51h-.56c-.2 0-.51.07-.78.37-.27.29-1.02 1-1.02 2.43s1.04 2.82 1.19 3.01c.15.2 2.05 3.13 4.97 4.39.69.3 1.24.48 1.66.61.7.22 1.33.19 1.83.11.56-.08 1.72-.7 1.96-1.38.24-.68.24-1.26.17-1.38-.07-.12-.26-.2-.55-.34z"/></svg>
+          Pedir el precio del live
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="cursos">
+    <div class="wrap">
+      <p class="kicker kicker--cyan">ArkanyAI Academy</p>
+      <h2>Próximos intensivos</h2>
+      <p class="sub" data-con-cursos>Online y en vivo, en hora de Lima. Fuera del live rige el precio que ves aquí.</p>
+
+      <div class="courses">
+        <article class="course" data-fin="2026-12-06">
+          <p class="who">Para quienes construyen</p>
+          <h3>AI Agent Production Sprint</h3>
+          <p>Construye un agente con LangChain y con Microsoft Agent Framework, ponle controles y despliégalo como microservicio en Google Cloud.</p>
+          <dl>
+            <dt>Fechas</dt><dd>Sáb 5 y dom 6 de diciembre · 9:00 a. m. a 1:00 p. m.</dd>
+            <dt>Duración</dt><dd>8 horas</dd>
+            <dt>Necesitas</dt><dd>Python intermedio, Git básico y una cuenta de Google Cloud</dd>
+            <dt>Inversión</dt><dd class="price" data-reg="S/ 399" data-hasta="2026-11-20">S/ 299<small>preventa hasta el 20 de noviembre · regular S/ 399</small></dd>
+          </dl>
+          <div class="acts">
+            <a class="btn btn--amber" href="https://wa.me/51932764113?text=Hola%20Miguel%2C%20estoy%20en%20tu%20live%20y%20quiero%20el%20precio%20del%20live%20para%20el%20AI%20Agent%20Production%20Sprint." target="_blank" rel="noopener">Estoy en el live: quiero este</a>
+            <a class="btn btn--line" href="https://forms.gle/UvdNp2E8Ue5opRHo7" target="_blank" rel="noopener">Inscribirme</a>
+            <a class="more" href="https://claude.ai/artifact/PGSJF1NquL9sntQaFzGRFm#agent" target="_blank" rel="noopener">Ver el temario completo</a>
+          </div>
+        </article>
+
+        <article class="course" data-fin="2026-12-05">
+          <p class="who">Para quienes deciden</p>
+          <h3>AI Strategy Sprint</h3>
+          <p>Decide dónde invertir en IA, con qué complejidad y con qué controles. Para gerentes, líderes de área, innovación y PMO.</p>
+          <dl>
+            <dt>Fecha</dt><dd>Sáb 5 de diciembre · 2:00 a 5:00 p. m.</dd>
+            <dt>Duración</dt><dd>3 horas</dd>
+            <dt>Necesitas</dt><dd>Nada técnico: no hace falta programar</dd>
+            <dt>Inversión</dt><dd class="price" data-reg="S/ 499" data-hasta="2026-11-20">S/ 399<small>preventa hasta el 20 de noviembre · regular S/ 499</small></dd>
+          </dl>
+          <div class="acts">
+            <a class="btn btn--amber" href="https://wa.me/51932764113?text=Hola%20Miguel%2C%20estoy%20en%20tu%20live%20y%20quiero%20el%20precio%20del%20live%20para%20el%20AI%20Strategy%20Sprint." target="_blank" rel="noopener">Estoy en el live: quiero este</a>
+            <a class="btn btn--line" href="https://forms.gle/UvdNp2E8Ue5opRHo7" target="_blank" rel="noopener">Inscribirme</a>
+            <a class="more" href="https://claude.ai/artifact/PGSJF1NquL9sntQaFzGRFm#strategy" target="_blank" rel="noopener">Ver el temario completo</a>
+          </div>
+        </article>
+      </div>
+      <p class="none" data-sin-cursos hidden>No hay un intensivo abierto en este momento. El próximo lo anuncio en el live y en la comunidad de WhatsApp.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="lives">
+    <div class="wrap">
+      <p class="kicker">Los lives</p>
+      <h2>Construimos IA en vivo, de noche</h2>
+      <div class="lives">
+        <div class="clock" aria-hidden="true">11 p. m.<small>a 2 a. m. · Lima</small></div>
+        <div>
+          <p>Hago los lives entre las <b>11 p. m. y las 2 a. m.</b> (hora de Lima), después de mi trabajo. La hora exacta cambia, pero siempre los programo <b>unas horas antes</b>. Sígueme en TikTok y te llega el aviso.</p>
+          <a class="btn btn--line" href="https://www.tiktok.com/@miguelcotrinaia" target="_blank" rel="noopener">Seguir a @miguelcotrinaia</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="quien">
+    <div class="wrap">
+      <p class="kicker">Quién te enseña</p>
+      <h2>Miguel Ángel Cotrina</h2>
+      <div class="teacher">
+        <img src="../img/miguel-320.jpg" alt="Miguel Ángel Cotrina" width="320" height="320" loading="lazy">
+        <div>
+          <ul class="proof">
+            <li>Arquitecto de Data &amp; IA en Indra.</li>
+            <li>Diseñé y lidero la Especialización en IA Generativa de la Universidad Ricardo Palma: 5 ediciones.</li>
+            <li>Más de 300 especialistas en IA formados en más de 3 años como docente.</li>
+            <li>Profesor de IA generativa en la Universidad de Lima.</li>
+          </ul>
+          <a class="verify" href="https://www.linkedin.com/in/miguelcotrinaia/" target="_blank" rel="noopener">Verifica mi trayectoria en LinkedIn ↗</a>
+          <p class="note">ArkanyAI Academy es la academia de ArkanyAI, la empresa que fundé.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="two">
+        <div class="panel">
+          <p class="kicker">¿Hoy no te inscribes?</p>
+          <h3>Únete a la comunidad</h3>
+          <p>En la comunidad de WhatsApp <b>Data &amp; IA con propósito</b> aviso los próximos lives y cursos, y comparto lo nuevo de IA generativa.</p>
+          <a class="btn btn--line" href="https://chat.whatsapp.com/IuQp9F3ZZNC0qbcYcITiNp" target="_blank" rel="noopener">Unirme a la comunidad</a>
+        </div>
+        <div class="panel">
+          <p class="kicker">Para empresas</p>
+          <h3>¿Lo quieres para tu equipo?</h3>
+          <p>Armo entrenamientos de IA a medida para equipos técnicos y de negocio. Escríbeme <b>EMPRESA</b> y conversamos.</p>
+          <a class="btn btn--line" href="https://wa.me/51932764113?text=EMPRESA.%20Hola%20Miguel%2C%20vengo%20de%20tu%20TikTok%20y%20quiero%20un%20entrenamiento%20de%20IA%20para%20mi%20equipo." target="_blank" rel="noopener">Escribir EMPRESA</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="preguntas" data-con-cursos>
+    <div class="wrap">
+      <p class="kicker">Antes de inscribirte</p>
+      <h2>Preguntas frecuentes</h2>
+      <div class="faq">
+        <details><summary>¿Necesito saber programar?</summary><p>Para el AI Strategy Sprint, no. Para el AI Agent Production Sprint, sí: Python intermedio y Git básico. Si estás empezando con agentes, mi playlist gratuita «Agentes de IA desde cero» en YouTube te deja listo.</p></details>
+        <details><summary>¿Las clases son en vivo?</summary><p>Sí. Los dos son online y en vivo, en hora de Lima, con espacio para preguntas.</p></details>
+        <details><summary>¿Puedo llevar los dos?</summary><p>Sí. Los horarios no se cruzan: el Agent Sprint es sábado y domingo por la mañana y el Strategy Sprint es el sábado por la tarde.</p></details>
+        <details><summary>¿Cómo funciona el precio del live?</summary><p>Lo anuncio durante el live y solo vale mientras estoy en vivo. Escríbeme por WhatsApp en ese momento y te lo separo. Fuera del live rige el precio de esta página.</p></details>
+        <details><summary>¿Cómo me inscribo?</summary><p>Con el formulario de inscripción o por WhatsApp al +51 932 764 113. Te confirmo tu cupo por mensaje.</p></details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <nav aria-label="Redes">
+      <a href="../">miguelcotrinaia.com</a>
+      <a href="https://www.tiktok.com/@miguelcotrinaia" target="_blank" rel="noopener">TikTok</a>
+      <a href="https://www.youtube.com/@miguelcotrinaia" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://www.linkedin.com/in/miguelcotrinaia/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.instagram.com/miguelcotrinaia" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.linkedin.com/showcase/arkanyai-academy/" target="_blank" rel="noopener">ArkanyAI Academy</a>
+    </nav>
+    <p>© <span id="year">2026</span> Miguel Ángel Cotrina Espinoza · Data &amp; IA con propósito · Lima, Perú</p>
+  </div>
+</footer>
+
+<div class="stick" data-con-cursos>
+  <div class="wrap">
+    <span>¿Estás en el live?</span>
+    <a class="btn btn--amber" href="https://wa.me/51932764113?text=Hola%20Miguel%2C%20estoy%20en%20tu%20live%20y%20quiero%20el%20precio%20del%20live." target="_blank" rel="noopener">Pedir el precio del live</a>
+  </div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var y = document.getElementById("year");
+  if (y) y.textContent = new Date().getFullYear();
+
+  // Fechas en hora de Lima. Para un intensivo nuevo, copia un <article class="course"> y cambia data-fin y los precios.
+  function finDelDia(fecha) { return new Date(fecha + "T23:59:59-05:00"); }
+  var ahora = new Date(), visibles = 0;
+  document.querySelectorAll(".course[data-fin]").forEach(function (c) {
+    if (ahora > finDelDia(c.getAttribute("data-fin"))) c.hidden = true; else visibles++;
+  });
+  document.querySelectorAll(".price[data-hasta]").forEach(function (p) {
+    if (ahora > finDelDia(p.getAttribute("data-hasta"))) p.innerHTML = p.getAttribute("data-reg") + "<small>precio regular</small>";
+  });
+  if (visibles === 0) {
+    document.querySelectorAll("[data-con-cursos]").forEach(function (e) { e.hidden = true; });
+    document.querySelectorAll("[data-sin-cursos]").forEach(function (e) { e.hidden = false; });
+    document.body.style.paddingBottom = "0";
+  }
+})();
+</script>
+</body>
+</html>
