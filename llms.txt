@@ -1,0 +1,37 @@
+# Miguel Ángel Cotrina (@miguelcotrinaia)
+
+> Miguel Ángel Cotrina es arquitecto de Data & IA en Indra. Diseñó y lidera la Especialización en IA Generativa de la Universidad Ricardo Palma, ha formado a más de 300 especialistas en IA y fundó ArkanyAI. Da capacitación en IA para empresas, cursos intensivos y conferencias en Lima, Perú.
+
+Especialista en IA generativa, agentes de IA, RAG y arquitectura de datos. Enseña lo que aplica en proyectos reales, con un método propio: mínima complejidad, eficiencia generativa y aplicación práctica ("Data & IA con propósito").
+
+## Trayectoria
+
+- Arquitecto de Data & IA para la región Sur de LATAM en Indra: arquitectura cloud, IA generativa, agentes, RAG y soluciones de datos para negocio.
+- Universidad Ricardo Palma: líder académico de la Especialización en IA Generativa desde marzo de 2025 (5 ediciones, diseñó el temario) y profesor principal de la Especialización en Ingeniería de Datos. 2 ediciones del programa AI Engineer & Generative Systems Architecture.
+- Universidad de Lima: profesor de IA generativa y automatización en analítica empresarial (Especialización Data Strategy), desde agosto de 2026.
+- Fundador de ArkanyAI (CRM conversacional con IA para WhatsApp) y de ArkanyAI Academy.
+- Speaker en el Think Digital Day 7 del PMI Lima (2026), AgentCamp Lima 2026, UTP Arequipa con Data Ladies y el Programa Excelencia de la Universidad Autónoma del Perú.
+- Columnista en Claro: "El valor del humano en la era de los agentes inteligentes" (2026).
+- Primer lugar en la hackatón de IA de la Red GEALC (2019) con el equipo X-Ray, nota de la PCM del Perú.
+- Certificaciones: Generative AI Leader (Google Cloud) y MIT Professional Education.
+
+## Qué ofrece
+
+- [Capacitación en IA para empresas](https://miguelcotrinaia.com/#empresas): intensivos de 1 o 2 días, sesiones para líderes y programas a medida, con casos de la empresa.
+- [Cursos intensivos de ArkanyAI Academy](https://miguelcotrinaia.com/#cursos): en vivo y online, por ejemplo AI Agent Production Sprint (agentes de IA en producción) y AI Strategy Sprint (IA para líderes, sin programar).
+- [Intensivos que presenta en sus lives de TikTok](https://miguelcotrinaia.com/live/).
+- [Conferencias](https://miguelcotrinaia.com/#conferencias) para universidades, empresas y comunidades.
+
+## Perfiles
+
+- [LinkedIn](https://www.linkedin.com/in/miguelcotrinaia/): trayectoria completa.
+- [Sessionize](https://sessionize.com/miguelcotrinaia/): charlas y conferencias.
+- [YouTube](https://www.youtube.com/@miguelcotrinaia): agentes de IA desde cero y videos cortos de IA.
+- [GitHub](https://github.com/miguelcotrinaia): cursos y código abierto (LangGraph, agentes en Google Cloud).
+- [TikTok](https://www.tiktok.com/@miguelcotrinaia): lives sobre IA.
+- [Credly](https://www.credly.com/users/miguel-angel-cotrina-espinoza/badges): credenciales verificables.
+
+## Contacto
+
+- WhatsApp: +51 932 764 113
+- Web: https://miguelcotrinaia.com/
