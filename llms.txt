@@ -17,8 +17,8 @@ Especialista en IA generativa, agentes de IA, RAG y arquitectura de datos. Ense�
 
 ## Qué ofrece
 
-- [Capacitación en IA para empresas](https://miguelcotrinaia.com/#empresas): intensivos de 1 o 2 días, sesiones para líderes y programas a medida, con casos de la empresa.
-- [Cursos intensivos de ArkanyAI Academy](https://miguelcotrinaia.com/#cursos): en vivo y online, por ejemplo AI Agent Production Sprint (agentes de IA en producción) y AI Strategy Sprint (IA para líderes, sin programar).
+- [Capacitación en IA para empresas](https://arkanyai.com/academy/#empresas): intensivos de 1 o 2 días, sesiones para líderes y programas a medida, con casos de la empresa.
+- [Cursos intensivos de ArkanyAI Academy](https://arkanyai.com/academy/): en vivo y online, por ejemplo AI Agent Production Sprint (agentes de IA en producción) y AI Strategy Sprint (IA para líderes, sin programar).
 - [Intensivos que presenta en sus lives de TikTok](https://miguelcotrinaia.com/live/).
 - [Conferencias](https://miguelcotrinaia.com/#conferencias) para universidades, empresas y comunidades.
 
