@@ -9,7 +9,7 @@ Especialista en IA generativa, agentes de IA, RAG y arquitectura de datos. Ense�
 - Arquitecto de Data & IA para la región Sur de LATAM en Indra: arquitectura cloud, IA generativa, agentes, RAG y soluciones de datos para negocio.
 - Universidad Ricardo Palma: líder académico de la Especialización en IA Generativa desde marzo de 2025 (5 ediciones, diseñó el temario) y profesor principal de la Especialización en Ingeniería de Datos. 2 ediciones del programa AI Engineer & Generative Systems Architecture.
 - Universidad de Lima: profesor de IA generativa y automatización en analítica empresarial (Especialización Data Strategy), desde agosto de 2026.
-- Fundador de ArkanyAI (CRM conversacional con IA para WhatsApp) y de ArkanyAI Academy.
+- Fundador de [ArkanyAI](https://arkanyai.com/), empresa de IA para adaptarse al cambio. Tiene dos unidades: ArkanyAI Academy (cursos intensivos y capacitación para empresas) y ArkanyAI Platform (CRM con IA para WhatsApp).
 - Speaker en el Think Digital Day 7 del PMI Lima (2026), AgentCamp Lima 2026, UTP Arequipa con Data Ladies y el Programa Excelencia de la Universidad Autónoma del Perú.
 - Columnista en Claro: "El valor del humano en la era de los agentes inteligentes" (2026).
 - Primer lugar en la hackatón de IA de la Red GEALC (2019) con el equipo X-Ray, nota de la PCM del Perú.
