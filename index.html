@@ -276,36 +276,14 @@
       <header class="sec__head">
         <p class="kicker">ArkanyAI Academy</p>
         <h2>Próximos cursos intensivos</h2>
-        <p>En vivo y online, con Miguel Ángel Cotrina. 5 y 6 de diciembre de 2026, hora de Lima.</p>
+        <p>En vivo y online, en hora de Lima. Los organiza ArkanyAI Academy y hoy los dicto yo.</p>
       </header>
-      <div class="courses">
-        <article class="course" data-fin="2026-12-06">
-          <p class="course__who">Para quienes construyen</p>
-          <h3>AI Agent Production Sprint</h3>
-          <p>Construye, despliega y controla agentes de IA como microservicios en Google Cloud, con LangChain y Microsoft Agent Framework.</p>
-          <dl>
-            <div><dt>Fechas</dt><dd>Sáb 5 y dom 6 de dic · 9:00 a 13:00</dd></div>
-            <div><dt>Duración</dt><dd>8 horas</dd></div>
-            <div><dt>Inversión</dt><dd class="price" data-pre="S/ 299" data-reg="S/ 399" data-hasta="2026-11-20">S/ 299 <small>preventa hasta el 20 de noviembre · regular S/ 399</small></dd></div>
-          </dl>
-          <div class="course__acts">
-            <a class="btn btn--accent" href="https://forms.gle/UvdNp2E8Ue5opRHo7" target="_blank" rel="noopener">Inscribirme</a>
-            <a class="btn btn--line-light" href="https://arkanyai.com/academy/cursos/ai-agent-production-sprint/" target="_blank" rel="noopener">Ver temario</a>
-          </div>
-        </article>
-        <article class="course" data-fin="2026-12-05">
-          <p class="course__who">Para quienes deciden</p>
-          <h3>AI Strategy Sprint</h3>
-          <p>Decide dónde invertir en IA, con qué complejidad y con qué controles. Para gerentes, líderes de área, innovación y PMO. No necesitas programar.</p>
-          <dl>
-            <div><dt>Fecha</dt><dd>Sáb 5 de dic · 14:00 a 17:00</dd></div>
-            <div><dt>Duración</dt><dd>3 horas</dd></div>
-            <div><dt>Inversión</dt><dd class="price" data-pre="S/ 399" data-reg="S/ 499" data-hasta="2026-11-20">S/ 399 <small>preventa hasta el 20 de noviembre · regular S/ 499</small></dd></div>
-          </dl>
-          <div class="course__acts">
-            <a class="btn btn--accent" href="https://forms.gle/UvdNp2E8Ue5opRHo7" target="_blank" rel="noopener">Inscribirme</a>
-            <a class="btn btn--line-light" href="https://arkanyai.com/academy/cursos/ai-strategy-sprint/" target="_blank" rel="noopener">Ver temario</a>
-          </div>
+      <div class="courses" id="cursosLista" aria-live="polite">
+        <article class="course">
+          <p class="course__who">ArkanyAI Academy</p>
+          <h3>Próximos intensivos</h3>
+          <p>Mira las fechas, los temarios y la matrícula en la Academy.</p>
+          <div class="course__acts"><a class="btn btn--accent" href="https://arkanyai.com/academy/" target="_blank" rel="noopener">Ver los cursos</a></div>
         </article>
       </div>
       <p class="courses__none" id="cursosVacio" hidden>Pronto anunciaré nuevas fechas. Únete a la <a href="https://chat.whatsapp.com/IuQp9F3ZZNC0qbcYcITiNp" target="_blank" rel="noopener">comunidad Data &amp; IA con propósito</a> para enterarte primero.</p>
@@ -402,5 +380,6 @@
 </a>
 
 <script src="script.js"></script>
+<script src="https://arkanyai.com/academy/cursos.js" onload="pintarCursos()"></script>
 </body>
 </html>

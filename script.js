@@ -29,17 +29,30 @@
     onScroll();
   }
 
-  // Cursos: oculta los que ya terminaron y cambia a precio regular al cerrar la preventa.
-  // Fechas en hora de Lima (UTC-5). Para un curso nuevo, copia un <article class="course"> y cambia data-fin.
-  function finDelDia(fecha) { return new Date(fecha + "T23:59:59-05:00"); }
-  var ahora = new Date();
-  var visibles = 0;
-  document.querySelectorAll(".course[data-fin]").forEach(function (c) {
-    if (ahora > finDelDia(c.getAttribute("data-fin"))) { c.hidden = true; } else { visibles++; }
-  });
-  document.querySelectorAll(".price[data-hasta]").forEach(function (p) {
-    if (ahora > finDelDia(p.getAttribute("data-hasta"))) { p.textContent = p.getAttribute("data-reg"); }
-  });
-  var vacio = document.getElementById("cursosVacio");
-  if (vacio && visibles === 0) vacio.hidden = false;
+  // Cursos: vienen de arkanyai.com/academy/cursos.json (un solo archivo para todas las webs).
+  // Para agregar o agotar un curso se edita ese archivo; aquí no hay que tocar nada.
+  window.pintarCursos = function () {
+    var A = window.ArkCursos, lista = document.getElementById("cursosLista");
+    if (!A || !lista) return;
+    A.cargar().then(function (cursos) {
+      cursos = cursos.slice(0, 4);
+      document.getElementById("cursosVacio").hidden = cursos.length > 0;
+      lista.hidden = cursos.length === 0;
+      lista.innerHTML = cursos.map(function (c) {
+        var e = A.esc, agotado = c.estado === "agotado";
+        var accion = agotado
+          ? '<a class="btn btn--accent" href="' + A.wa("Hola Miguel, quiero que me avises de la próxima edición del " + c.nombre + ".") + '" target="_blank" rel="noopener">Avísame de la próxima</a>'
+          : '<a class="btn btn--accent" href="' + e(c.inscripcion) + '" target="_blank" rel="noopener">Inscribirme</a>';
+        return '<article class="course' + (agotado ? " is-agotado" : "") + '">' +
+          '<p class="course__who">' + e(A.para(c)) + (agotado ? ' <span class="course__state">Cupos agotados</span>' : "") + '</p>' +
+          '<h3>' + e(c.nombre) + '</h3><p>' + e(c.resumen) + '</p>' +
+          '<dl><div><dt>Fechas</dt><dd>' + e(c.fechas) + '</dd></div>' +
+          '<div><dt>Duración</dt><dd>' + e(c.duracion) + '</dd></div>' +
+          '<div><dt>Inversión</dt><dd class="price">' + e(c.precio) + '</dd></div></dl>' +
+          '<div class="course__acts">' + accion +
+          (c.temario ? '<a class="btn btn--line-light" href="' + e(c.temario) + '" target="_blank" rel="noopener">Ver temario</a>' : "") +
+          '</div></article>';
+      }).join("");
+    }).catch(function () {});
+  };
 })();
