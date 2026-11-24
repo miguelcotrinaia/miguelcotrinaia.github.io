@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lives e intensivos de IA | Miguel Ángel Cotrina (@miguelcotrinaia)</title>
-<meta name="description" content="Los intensivos de IA de los que hablo en mis lives de TikTok: AI Agent Production Sprint y AI Strategy Sprint, de ArkanyAI Academy. En vivo y online.">
+<meta name="description" content="Los intensivos de IA de los que hablo en mis lives de TikTok, de ArkanyAI Academy. En vivo y online, con precio especial mientras dura el live.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://miguelcotrinaia.com/live/">
 <link rel="icon" type="image/svg+xml" href="../img/marca/icono.svg">
@@ -26,7 +26,7 @@
   --night:#0E1B2C; --night-2:#14253B; --night-3:#1B3049;
   --ink:#F4F1EA; --ink-2:#B9C2D0; --ink-3:#8593A8;
   --line:rgba(255,255,255,.12);
-  --amber:#F2B233; --amber-soft:rgba(242,178,51,.12); --cyan:#3FC3E6;
+  --amber:#F2B233; --amber-soft:rgba(242,178,51,.12); --cyan:#3FC3E6; --red:#FF4D5E;
   --display:"Archivo","Helvetica Neue",Arial,sans-serif;
   --body:"Source Sans 3","Segoe UI",Arial,sans-serif;
   --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
@@ -67,6 +67,9 @@ h1,h2,h3{font-family:var(--display);line-height:1.1;letter-spacing:-.015em;text-
 .livebox h2 i{width:10px;height:10px;border-radius:50%;background:#FF4D5E;box-shadow:0 0 0 4px rgba(255,77,94,.22);flex:none}
 .livebox p{color:var(--ink)}
 .livebox .btn{justify-self:start}
+.livebox.on{border-color:var(--red);background:rgba(255,77,94,.10)}
+.livebox .cuenta{font-family:var(--mono);font-size:15px;color:var(--amber)}
+.livebox .cuenta b{font-size:22px;font-weight:500;color:var(--ink);margin-left:6px}
 
 .sec{padding:48px 0 8px}
 .sec h2{font-size:clamp(26px,4.5vw,34px);font-weight:800;margin-top:8px}
@@ -86,6 +89,10 @@ h1,h2,h3{font-family:var(--display);line-height:1.1;letter-spacing:-.015em;text-
 .course a.more{font-size:15px;color:var(--ink-2);text-align:center}
 .course a.more:hover{color:var(--ink)}
 .course .sold{color:var(--amber)}
+.course.live{border-color:var(--amber);box-shadow:inset 0 0 0 1px var(--amber)}
+.course .tag{justify-self:start;font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;background:var(--red);color:#fff;padding:5px 10px;border-radius:999px}
+.course .price s{display:block;font-size:17px;font-weight:700;color:var(--ink-3)}
+.course .price .now{color:var(--amber);font-size:30px}
 .none{margin-top:18px;padding:18px;border:1px dashed var(--line);border-radius:14px;color:var(--ink-2)}
 
 .lives{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center;background:var(--night-2);border:1px solid var(--line);border-radius:16px;padding:20px;margin-top:20px}
@@ -162,9 +169,15 @@ h1,h2,h3{font-family:var(--display);line-height:1.1;letter-spacing:-.015em;text-
       <p class="lead" data-con-cursos>Cursos en vivo de ArkanyAI Academy. Los dicto yo: trabajo en <b>Indra</b> como arquitecto de Data &amp; IA y diseñé la <b>Especialización en IA Generativa de la Universidad Ricardo Palma</b>.</p>
       <p class="lead" data-sin-cursos hidden>Aquí publico el intensivo que ofrezco en cada live. Trabajo en <b>Indra</b> como arquitecto de Data &amp; IA y diseñé la <b>Especialización en IA Generativa de la Universidad Ricardo Palma</b>.</p>
 
-      <div class="livebox" data-con-cursos>
+      <div class="livebox on" id="liveOn" role="status" hidden>
+        <h2><i aria-hidden="true"></i>Estoy en vivo: precio live activo</h2>
+        <p>Debajo de cada curso ves el precio del live. Solo vale mientras dura la transmisión: inscríbete o escríbeme por WhatsApp antes de que termine.</p>
+        <p class="cuenta">Termina en<b id="liveCuenta"></b></p>
+        <a class="btn btn--amber" href="#cursos">Ver los precios del live</a>
+      </div>
+      <div class="livebox" id="liveOff" data-con-cursos>
         <h2><i aria-hidden="true"></i>¿Estás en el live ahora?</h2>
-        <p>El precio del live solo vale mientras estoy en vivo. Escríbeme por WhatsApp antes de que termine y te lo separo.</p>
+        <p>Cuando estoy en vivo, el precio del live aparece aquí, debajo de cada curso, y solo vale mientras dura la transmisión. Si no lo ves, escríbeme por WhatsApp.</p>
         <a class="btn btn--amber" href="https://wa.me/51932764113?text=Hola%20Miguel%2C%20estoy%20en%20tu%20live%20y%20quiero%20el%20precio%20del%20live." target="_blank" rel="noopener">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.02 2C6.5 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.07L2 22l5.06-1.33A9.94 9.94 0 0 0 12.02 22C17.53 22 22 17.52 22 12S17.53 2 12.02 2zm5.45 12.38c-.29-.15-1.72-.85-1.99-.95-.27-.1-.46-.15-.66.15-.2.29-.76.95-.93 1.14-.17.2-.34.22-.63.07-.29-.15-1.22-.45-2.32-1.43-.86-.76-1.44-1.71-1.61-2-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.51.15-.17.2-.29.29-.49.1-.2.05-.37-.02-.51-.07-.15-.66-1.59-.9-2.18-.24-.57-.48-.5-.66-.51h-.56c-.2 0-.51.07-.78.37-.27.29-1.02 1-1.02 2.43s1.04 2.82 1.19 3.01c.15.2 2.05 3.13 4.97 4.39.69.3 1.24.48 1.66.61.7.22 1.33.19 1.83.11.56-.08 1.72-.7 1.96-1.38.24-.68.24-1.26.17-1.38-.07-.12-.26-.2-.55-.34z"/></svg>
           Pedir el precio del live
@@ -177,7 +190,7 @@ h1,h2,h3{font-family:var(--display);line-height:1.1;letter-spacing:-.015em;text-
     <div class="wrap">
       <p class="kicker kicker--cyan">ArkanyAI Academy</p>
       <h2>Próximos intensivos</h2>
-      <p class="sub" data-con-cursos>Online y en vivo, en hora de Lima. Fuera del live rige el precio que ves aquí.</p>
+      <p class="sub" data-con-cursos id="cursosSub">Online y en vivo, en hora de Lima. Fuera del live rige el precio regular.</p>
 
       <div class="courses" id="cursosLista" aria-live="polite">
         <article class="course">
@@ -198,7 +211,7 @@ h1,h2,h3{font-family:var(--display);line-height:1.1;letter-spacing:-.015em;text-
       <div class="lives">
         <div class="clock" aria-hidden="true">11 p. m.<small>a 2 a. m. · Lima</small></div>
         <div>
-          <p>Hago los lives entre las <b>11 p. m. y las 2 a. m.</b> (hora de Lima), después de mi trabajo. La hora exacta cambia, pero siempre los programo <b>unas horas antes</b>. Sígueme en TikTok y te llega el aviso.</p>
+          <p>Salgo en vivo de noche, normalmente entre las <b>11 p. m. y las 2 a. m.</b> (hora de Lima), después de mi trabajo. Algunos lives los programo y otros son <b>de último momento</b>: sígueme en TikTok para que te llegue el aviso.</p>
           <a class="btn btn--line" href="https://www.tiktok.com/@miguelcotrinaia" target="_blank" rel="noopener">Seguir a @miguelcotrinaia</a>
         </div>
       </div>
@@ -249,10 +262,10 @@ h1,h2,h3{font-family:var(--display);line-height:1.1;letter-spacing:-.015em;text-
       <p class="kicker">Antes de inscribirte</p>
       <h2>Preguntas frecuentes</h2>
       <div class="faq">
-        <details><summary>¿Necesito saber programar?</summary><p>Para el AI Strategy Sprint, no. Para el AI Agent Production Sprint, sí: Python intermedio y Git básico. Si estás empezando con agentes, mi playlist gratuita «Agentes de IA desde cero» en YouTube te deja listo.</p></details>
-        <details><summary>¿Las clases son en vivo?</summary><p>Sí. Los dos son online y en vivo, en hora de Lima, con espacio para preguntas.</p></details>
-        <details><summary>¿Puedo llevar los dos?</summary><p>Sí. Los horarios no se cruzan: el Agent Sprint es sábado y domingo por la mañana y el Strategy Sprint es el sábado por la tarde.</p></details>
-        <details><summary>¿Cómo funciona el precio del live?</summary><p>Lo anuncio durante el live y solo vale mientras estoy en vivo. Escríbeme por WhatsApp en ese momento y te lo separo. Fuera del live rige el precio de esta página.</p></details>
+        <details><summary>¿Necesito saber programar?</summary><p>Depende del curso: en cada uno indico qué necesitas («Necesitas»). Hay cursos para quienes deciden, sin código, y cursos para quienes construyen. Si estás empezando con agentes, mi playlist gratuita «Agentes de IA desde cero» en YouTube te deja listo.</p></details>
+        <details><summary>¿Las clases son en vivo? ¿Queda grabación?</summary><p>Sí, son online y en vivo, en hora de Lima, con espacio para preguntas. Al terminar cada sesión recibes la grabación, la presentación y todo el material de la sesión.</p></details>
+        <details><summary>¿Puedo llevar más de un curso?</summary><p>Sí, siempre que sus horarios no se crucen. Revisa las fechas de cada uno en esta página.</p></details>
+        <details><summary>¿Cómo funciona el precio del live?</summary><p>Mientras estoy en vivo, aparece aquí mismo debajo de cada curso, con el precio regular tachado. Solo vale mientras dura el live: inscríbete desde esta página o escríbeme por WhatsApp antes de que termine. Fuera del live rige el precio regular.</p></details>
         <details><summary>¿Cómo me inscribo?</summary><p>Con el formulario de inscripción o por WhatsApp al +51 932 764 113. Te confirmo tu cupo por mensaje.</p></details>
       </div>
     </div>
@@ -275,8 +288,8 @@ h1,h2,h3{font-family:var(--display);line-height:1.1;letter-spacing:-.015em;text-
 
 <div class="stick" data-con-cursos>
   <div class="wrap">
-    <span>¿Estás en el live?</span>
-    <a class="btn btn--amber" href="https://wa.me/51932764113?text=Hola%20Miguel%2C%20estoy%20en%20tu%20live%20y%20quiero%20el%20precio%20del%20live." target="_blank" rel="noopener">Pedir el precio del live</a>
+    <span id="stickTxt">¿Estás en el live?</span>
+    <a class="btn btn--amber" id="stickBtn" href="https://wa.me/51932764113?text=Hola%20Miguel%2C%20estoy%20en%20tu%20live%20y%20quiero%20el%20precio%20del%20live." target="_blank" rel="noopener">Pedir el precio del live</a>
   </div>
 </div>
 
@@ -285,34 +298,98 @@ h1,h2,h3{font-family:var(--display);line-height:1.1;letter-spacing:-.015em;text-
   "use strict";
   var y = document.getElementById("year");
   if (y) y.textContent = new Date().getFullYear();
+  var $ = function (id) { return document.getElementById(id); };
+  var WA_GENERAL = $("stickBtn").getAttribute("href");
 
   // Los cursos vienen de arkanyai.com/academy/cursos.json (un solo archivo para todas las webs).
+  // El precio live lo enciende Miguel desde su panel; esta página lo consulta cada 30 s mientras está abierta
+  // y vuelve sola al precio regular cuando el live se apaga o vence.
+  var A, cursos = [], live = { activo: false }, consulta = null;
+
+  function dosDig(n) { return (n < 10 ? "0" : "") + n; }
+  function falta(iso) {
+    var s = Math.max(0, Math.round((new Date(iso) - Date.now()) / 1000)), h = Math.floor(s / 3600);
+    return (h ? h + ":" + dosDig(Math.floor(s / 60) % 60) : Math.floor(s / 60)) + ":" + dosDig(s % 60);
+  }
+  // Si arkanyai.com aún tiene la versión anterior de cursos.js (sin live), la página funciona igual que antes.
+  function estadoLive() { return A.live ? A.live() : Promise.resolve({ activo: false }); }
+  function enVivo() { return live.activo && new Date(live.hasta) > new Date(); }
+
+  function tarjeta(c) {
+    var e = A.esc, agotado = c.estado === "agotado", l = c.live, botones;
+    if (agotado) {
+      botones = '<a class="btn btn--line" href="' + A.wa("Hola Miguel, quiero que me avises de la próxima edición del " + c.nombre + ".") + '" target="_blank" rel="noopener">Avísame de la próxima edición</a>';
+    } else if (l) {
+      botones = '<a class="btn btn--amber" href="' + e(c.inscripcion + (c.inscripcion.indexOf("?") < 0 ? "?" : "&") + "live=1") + '" target="_blank" rel="noopener">Inscribirme a ' + e(l.precio) + '</a>' +
+        '<a class="btn btn--line" href="' + A.wa("Hola Miguel, estoy en tu live y quiero el " + c.nombre + " a " + l.precio + " (precio live).") + '" target="_blank" rel="noopener">Separarlo por WhatsApp</a>';
+    } else {
+      botones = '<a class="btn btn--amber" href="' + A.wa("Hola Miguel, estoy en tu live y quiero el precio del live para el " + c.nombre + ".") + '" target="_blank" rel="noopener">Estoy en el live: quiero este</a>' +
+        '<a class="btn btn--line" href="' + e(c.inscripcion) + '" target="_blank" rel="noopener">Inscribirme</a>';
+    }
+    var precio = l
+      ? '<s>' + e(l.antes) + '</s><span class="now">' + e(l.precio) + '</span><small>precio live · −' + l.descuento + '% · solo durante el live</small>'
+      : e(c.precio) + '<small>precio regular</small>';
+    return '<article class="course' + (l ? " live" : "") + '">' +
+      (l ? '<span class="tag">Precio live</span>' : "") +
+      '<p class="who">' + e(A.para(c)) + (agotado ? ' · <span class="sold">Cupos agotados</span>' : "") + '</p>' +
+      '<h3>' + e(c.nombre) + '</h3><p>' + e(c.resumen) + '</p>' +
+      '<dl><dt>Fechas</dt><dd>' + e(c.fechas) + '</dd><dt>Duración</dt><dd>' + e(c.duracion) + '</dd>' +
+      '<dt>Necesitas</dt><dd>' + e(c.requisitos) + '</dd><dt>Inversión</dt><dd class="price">' + precio + '</dd></dl>' +
+      '<div class="acts">' + botones +
+      (c.temario ? '<a class="more" href="' + e(c.temario) + '" target="_blank" rel="noopener">Ver el temario completo</a>' : "") +
+      '</div></article>';
+  }
+
+  function pintar() {
+    var lista = $("cursosLista");
+    cursos.forEach(function (c) { if (A.conLive) A.conLive(c, live); else c.live = null; });
+    var conLive = cursos.filter(function (c) { return c.live; });
+    // Los que tienen precio live van primero.
+    var orden = conLive.concat(cursos.filter(function (c) { return !c.live; }));
+    lista.innerHTML = orden.map(tarjeta).join("");
+    var on = enVivo() && conLive.length > 0;
+    $("liveOn").hidden = !on;
+    $("liveOff").hidden = on || !cursos.some(function (c) { return c.estado === "abierto"; });
+    $("cursosSub").textContent = on
+      ? "Online y en vivo, en hora de Lima. Los precios live valen solo mientras dura la transmisión."
+      : "Online y en vivo, en hora de Lima. Fuera del live rige el precio regular.";
+    $("stickBtn").textContent = on ? "Ver precios del live" : "Pedir el precio del live";
+    $("stickBtn").setAttribute("href", on ? "#cursos" : WA_GENERAL);
+    if (on) { $("stickBtn").removeAttribute("target"); } else { $("stickBtn").setAttribute("target", "_blank"); }
+    reloj();
+  }
+
+  function reloj() {
+    var on = enVivo() && !$("liveOn").hidden;
+    if (live.activo && !enVivo()) { live = { activo: false }; pintar(); return; }  // venció: vuelve al precio regular
+    $("liveCuenta").textContent = on ? falta(live.hasta) : "";
+    $("stickTxt").textContent = on ? "Precio live · termina en " + falta(live.hasta) : "¿Estás en el live?";
+  }
+  setInterval(reloj, 1000);
+
+  function consultar() {
+    if (document.hidden || !A) return;
+    estadoLive().then(function (st) {
+      var antes = JSON.stringify(live);
+      live = st;
+      if (JSON.stringify(live) !== antes) pintar();
+    });
+  }
+  document.addEventListener("visibilitychange", function () { if (!document.hidden) consultar(); });
+
   window.pintarCursos = function () {
-    var A = window.ArkCursos, lista = document.getElementById("cursosLista");
-    if (!A || !lista) return;
-    A.cargar().then(function (cursos) {
-      var abiertos = cursos.filter(function (c) { return c.estado === "abierto"; });
-      lista.innerHTML = cursos.map(function (c) {
-        var e = A.esc, agotado = c.estado === "agotado";
-        var botones = agotado
-          ? '<a class="btn btn--line" href="' + A.wa("Hola Miguel, quiero que me avises de la próxima edición del " + c.nombre + ".") + '" target="_blank" rel="noopener">Avísame de la próxima edición</a>'
-          : '<a class="btn btn--amber" href="' + A.wa("Hola Miguel, estoy en tu live y quiero el precio del live para el " + c.nombre + ".") + '" target="_blank" rel="noopener">Estoy en el live: quiero este</a>' +
-            '<a class="btn btn--line" href="' + e(c.inscripcion) + '" target="_blank" rel="noopener">Inscribirme</a>';
-        return '<article class="course">' +
-          '<p class="who">' + e(A.para(c)) + (agotado ? ' · <span class="sold">Cupos agotados</span>' : "") + '</p>' +
-          '<h3>' + e(c.nombre) + '</h3><p>' + e(c.resumen) + '</p>' +
-          '<dl><dt>Fechas</dt><dd>' + e(c.fechas) + '</dd><dt>Duración</dt><dd>' + e(c.duracion) + '</dd>' +
-          '<dt>Necesitas</dt><dd>' + e(c.requisitos) + '</dd><dt>Inversión</dt><dd class="price">' + e(c.precio) + '<small>precio regular</small></dd></dl>' +
-          '<div class="acts">' + botones +
-          (c.temario ? '<a class="more" href="' + e(c.temario) + '" target="_blank" rel="noopener">Ver el temario completo</a>' : "") +
-          '</div></article>';
-      }).join("");
-      if (abiertos.length === 0) {
+    A = window.ArkCursos;
+    if (!A || !$("cursosLista")) return;
+    Promise.all([A.cargar(), estadoLive()]).then(function (r) {
+      cursos = r[0]; live = r[1];
+      if (!cursos.some(function (c) { return c.estado === "abierto"; })) {
         document.querySelectorAll("[data-con-cursos]").forEach(function (el) { el.hidden = true; });
         document.querySelectorAll("[data-sin-cursos]").forEach(function (el) { el.hidden = false; });
-        lista.hidden = cursos.length === 0;
+        $("cursosLista").hidden = cursos.length === 0;
         document.body.style.paddingBottom = "0";
       }
+      pintar();
+      if (!consulta) consulta = setInterval(consultar, 30000);
     }).catch(function () {});
   };
 })();
